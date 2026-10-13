@@ -1,0 +1,41 @@
+# =============================================================================
+# Copy this file to terraform.tfvars and fill in your values.
+# Do NOT commit terraform.tfvars — it may contain sensitive data.
+# =============================================================================
+
+# Databricks account ID (find it at accounts.cloud.databricks.com)
+databricks_account_id = "YOUR_DATABRICKS_ACCOUNT_ID"
+
+# AWS account ID
+aws_account_id = "YOUR_AWS_ACCOUNT_ID"
+
+# AWS region (must be a Databricks-supported region)
+region = "us-west-2"
+
+# Prefix for all resource names
+prefix          = "myenv"
+resource_prefix = "myenv"
+
+# Availability zones (must be in the selected region)
+availability_zones = ["us-west-2a", "us-west-2b"]
+
+# VPC CIDR
+vpc_cidr_range = "10.0.0.0/16"
+
+# Subnet CIDRs (one per AZ for each type)
+private_subnets_cidr = ["10.0.1.0/24", "10.0.2.0/24"]
+public_subnets_cidr  = ["10.0.3.0/24", "10.0.4.0/24"]
+intra_subnet_cidr    = ["10.0.5.0/24", "10.0.6.0/24"]
+
+# Unity Catalog metastore — leave metastore_id empty to create a new one
+metastore_id   = ""
+metastore_name = "myenv-metastore"
+
+# Optional: set catalog_name, external_location_name, storage_credential_name
+# Leave empty to use prefix-based defaults
+catalog_name              = ""
+external_location_name    = ""
+storage_credential_name   = ""
+
+# Set to true to create a UC single-node validation cluster
+new_cluster = false
